@@ -1,5 +1,6 @@
 package com.demo.common;
 
+import com.alibaba.fastjson.JSON;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -27,8 +28,9 @@ public class DemoConfig extends JFinalConfig {
 	 * 启动入口，运行此 main 方法可以启动项目，此 main 方法可以放置在任意的 Class 类定义中，不一定要放于此
 	 */
 	public static void main(String[] args) {
-		 UndertowServer.start(DemoConfig.class);
-
+		  UndertowServer.start(DemoConfig.class);
+		//String str="{\"total\":1,\"rows\":[  {\"wareHouseName\":\"成都特供仓\",\"sex\":\"男\",\"division\":\"服\",\"marketprice\":348.0,\"ukSize\":\"S\",\"articleno\":\"288254-010\",\"brandName\":\"耐克\",\"discount\":2.3,\"quarter\":\"\",\"innerNum\":500,\"size\":\"S\",\"barcode\":\"4056561268379\"},  {\"wareHouseName\":\"成都特供仓\",\"sex\":\"男\",\"division\":\"服\",\"marketprice\":1399.0,\"ukSize\":\"10\",\"articleno\":\"304775-125\",\"brandName\":\"耐克\",\"discount\":10.1,\"quarter\":\"15Q2\",\"innerNum\":500,\"size\":\"10\",\"barcode\":\"4056561268378\"}]}";
+		//BackData j = JSON.parseObject(str, BackData.class);
 
 	}
 

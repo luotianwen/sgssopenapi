@@ -20,6 +20,8 @@ public class Stock  {
 	private double marketprice;		// 市场价
 	private String quarter;		// 商品上市季节
 
+
+
 	public String getArticleno() {
 		return articleno;
 	}

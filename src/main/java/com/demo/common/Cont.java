@@ -26,6 +26,8 @@ public class Cont {
     public static String BAND="http://open.xingyunyezi.com/api/openapi/getWareHouseNameInfo.do";
     //库存
     public static String STOCK="http://open.xingyunyezi.com/api/openapi/getInventoryList.do";
+   //根据条件获取库存
+    public static String GROUPSTOCK="http://open.xingyunyezi.com/api/openapi/getInventoryListByGroup.do";
     //快递
     public static String DELIVER="http://open.xingyunyezi.com/api/openapi/getOrderFeedBackList.do";
     //下单
