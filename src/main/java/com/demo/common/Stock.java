@@ -21,7 +21,6 @@ public class Stock  {
 	private String quarter;		// 商品上市季节
 
 
-
 	public String getArticleno() {
 		return articleno;
 	}
