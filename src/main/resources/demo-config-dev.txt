@@ -8,3 +8,8 @@
 #new.password =4e99bfefed5fb930!Q
 
 devMode = false
+
+
+pickingRate=70
+maxDiscount=7.5
+return_type=1

@@ -2,6 +2,7 @@ package com.demo.common;
 
 import com.alibaba.fastjson.JSON;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.PropKit;
 import com.jfinal.kit.StrKit;
 import com.jfinal.log.Log;
 
@@ -38,9 +39,9 @@ public class OpenApi extends Controller {
           Map map = new HashMap();
           map.put("sign", Cont.SIGN);
           map.put("articleno", articleno.trim());
-          map.put("pickingRate","70");
-          map.put("maxDiscount","8");
-          map.put("return_type","1");
+          map.put("pickingRate", PropKit.get("pickingRate"));
+          map.put("maxDiscount",PropKit.get("maxDiscount"));
+          map.put("return_type",PropKit.get("return_type"));
           String str = Cont.post(Cont.GROUPSTOCK, map);
           log.info(str);
           //System.out.println(str);
