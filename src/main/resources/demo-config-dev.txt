@@ -1,11 +1,7 @@
 # config
-#old.jdbcUrl = jdbc:mysql://47.92.110.128:8904/yoyoundxcx?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
-#old.user = root
-#old.password =4e99bfefed5fb930!Q
-
-#new.jdbcUrl = jdbc:mysql://47.94.216.97:3306/we7?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
-#new.user = yoyound713
-#new.password =4e99bfefed5fb930!Q
+jdbcUrl = jdbc:mysql://47.92.110.128:8904/yoyoundxcx?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user = root
+password =4e99bfefed5fb930!Q
 
 devMode = false
 

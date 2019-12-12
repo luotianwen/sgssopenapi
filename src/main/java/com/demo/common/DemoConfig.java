@@ -9,6 +9,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
@@ -83,13 +84,17 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置插件
 	 */
 	public void configPlugin(Plugins me) {
-
+		DruidPlugin oldshoplugin = new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
+		me.add(oldshoplugin);
+		ActiveRecordPlugin oldMysql = new ActiveRecordPlugin(oldshoplugin);
+		me.add(oldMysql);
+		System.out.println("数据库注册");
 	}
 	
 	public static DruidPlugin createDruidPlugin() {
 		loadConfig();
 		
-		return new DruidPlugin(p.get("new.jdbcUrl"), p.get("new.user"), p.get("new.password").trim());
+		return new DruidPlugin(p.get("jdbcUrl"), p.get("user"), p.get("password").trim());
 	}
 	
 	/**

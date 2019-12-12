@@ -19,7 +19,15 @@ public class Stock  {
 	private int innernum;		// 库存数量
 	private double marketprice;		// 市场价
 	private String quarter;		// 商品上市季节
+	private double discount;//折扣信息
 
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
 
 	public String getArticleno() {
 		return articleno;

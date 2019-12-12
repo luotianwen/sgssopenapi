@@ -5,6 +5,8 @@ import com.jfinal.core.Controller;
 import com.jfinal.kit.PropKit;
 import com.jfinal.kit.StrKit;
 import com.jfinal.log.Log;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +38,11 @@ public class OpenApi extends Controller {
           renderJson(b);
       }
       if(!f) {
+          Double d=7.6d;
+          Record r= Db.findFirst("select discount from s_d_g where artNo =?",articleno);
+          if(r!=null) {
+              d = r.getDouble("discount");
+          }
           Map map = new HashMap();
           map.put("sign", Cont.SIGN);
           map.put("articleno", articleno.trim());
@@ -55,10 +62,17 @@ public class OpenApi extends Controller {
               List<Stock>datass=new ArrayList<>();
               for (Stock s:ss
                    ) {
-                  if(null==dataMap.get(s.getArticleno()+"||"+s.getSize())){
+                  if(s.getDiscount()>d)
+                  {
+                      continue;
+                  }
+                  String size=s.getSize().replace("A/","").replace("A","");
+                  s.setSize(size);
+                  s.setDiscount(0d);
+                  if(null==dataMap.get(s.getArticleno()+"||"+size)){
 
                       datass.add(s);
-                      dataMap.put(s.getArticleno()+"||"+s.getSize(),s);
+                      dataMap.put(s.getArticleno()+"||"+size,s);
                   }
               }
               backData.setRows(datass);
